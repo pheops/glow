@@ -1,0 +1,22 @@
+html, body {
+ background-color: #000000;
+  padding: 0;
+  width :400px;
+  display: block; 
+  padding-top:10px;
+  margin: auto;
+
+  overscroll-behavior: none;
+
+}
+
+body {
+    justify-content: right;
+}
+
+canvas {
+ display: block;
+/*  border: 1px solid white;*/
+  padding:0;
+  margin: auto;
+}
