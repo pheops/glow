@@ -151,7 +151,7 @@ function draw() {
 
 function windowResized() {
   //zoomBy = (windowWidth / windowHeight + w/h < windowHeight / windowWidth) ? windowWidth / w : windowHeight / h;
-  zoomBy = windowWidth > windowHeight ? windowHeight / h : windowWidth / w;
+  zoomBy = windowWidth > windowHeight ? windowHeight / (h+30) : windowWidth / (w+30);
   cnv.style("zoom", zoomBy);
   xOffset = document.getElementById("sketch-holder").offsetLeft;
   yOffset = document.getElementById("sketch-holder").offsetTop;
