@@ -1,7 +1,4 @@
 
-/*
-YOUR SKETCH GOES HERE
-*/
 //TEMPLATE VARIABLES/////////
 let cnv;
 let zoomBy = 1;
@@ -113,10 +110,10 @@ function draw() {
         let xdif = x - blobs[i].x;
         let ydif = y - blobs[i].y;
         let d = sqrt((xdif * xdif) + (ydif * ydif)) ;
-        sum += 10 * blobs[i].r / d;
+        sum += 20 * blobs[i].r / d;
       }
       
-      set(x, y, color(constrain(sum, 0, 50), constrain(sum, 0, 150), constrain(sum, 0, 150)));
+      set(x, y, color(constrain(sum, 0, 250), constrain(sum, 0, 250), constrain(sum, 0, 50)));
     }
   }
   updatePixels();
@@ -131,27 +128,13 @@ function draw() {
 
 }
 
-// function mouseClicked() {
-//  mx = winMouseX / zoomBy - xOffset / zoomBy;
-//  my = winMouseY / zoomBy - yOffset / zoomBy;
 
-// }
-
-// function mouseDragged() {
-//  mx = winMouseX / zoomBy - xOffset / zoomBy;
-//  my = winMouseY / zoomBy - yOffset / zoomBy;
-// }
-
-// function mouseMoved() {
-//  mx = winMouseX / zoomBy - xOffset / zoomBy;
-//  my = winMouseY / zoomBy - yOffset / zoomBy;
-// }
 
 
 
 function windowResized() {
   //zoomBy = (windowWidth / windowHeight + w/h < windowHeight / windowWidth) ? windowWidth / w : windowHeight / h;
-  zoomBy = windowWidth > windowHeight ? windowHeight / (h+30) : windowWidth / (w+30);
+  zoomBy = windowWidth > windowHeight ? windowHeight / (h) : windowWidth / (w);
   cnv.style("zoom", zoomBy);
   xOffset = document.getElementById("sketch-holder").offsetLeft;
   yOffset = document.getElementById("sketch-holder").offsetTop;
